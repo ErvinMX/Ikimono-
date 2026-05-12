@@ -28,4 +28,8 @@ __pycache__/
 *.pyc
 
 # Large ML Weights
+<<<<<<< HEAD
 ser_model_weights.h5
+=======
+ser_model_weights.h5
+>>>>>>> 3e8de738152f88633f95c879c3d7937a47f39c45
