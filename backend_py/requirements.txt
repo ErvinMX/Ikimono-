@@ -1,0 +1,22 @@
+# =======================================================
+# IKIMONO Emotion Detection - Backend Requirements
+# =======================================================
+
+# --- Communication & UI ---
+paho-mqtt>=2.0.0       # Required for CallbackAPIVersion.VERSION2
+pynput>=1.7.6          # Required for keyboard overrides (Shift+S, etc.)
+
+# --- Audio Analysis & Speech (Whisper) ---
+openai-whisper         # Local transcription AI
+torch                  # Backend for Whisper
+torchaudio             # Audio processing for Torch
+numpy>=1.24.0          # Required for signal processing math
+
+# --- Emotion AI (Keras/TensorFlow) ---
+tensorflow>=2.12.0     # Deep Learning engine
+h5py                   # Required for loading .h5 model weights
+librosa>=0.10.0        # Audio feature extraction (MFCCs)
+soundfile>=0.12.0      # Backend for reading raw audio bytes
+
+# --- Utilities ---
+python-dotenv>=1.0.0

@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 220 20% 7%;
+    --foreground: 210 20% 92%;
+
+    --card: 220 18% 10%;
+    --card-foreground: 210 20% 92%;
+
+    --popover: 220 18% 10%;
+    --popover-foreground: 210 20% 92%;
+
+    --primary: 160 60% 45%;
+    --primary-foreground: 220 20% 7%;
+
+    --secondary: 220 16% 16%;
+    --secondary-foreground: 210 20% 80%;
+
+    --muted: 220 14% 14%;
+    --muted-foreground: 215 15% 50%;
+
+    --accent: 220 16% 18%;
+    --accent-foreground: 210 20% 88%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 14% 16%;
+    --input: 220 14% 18%;
+    --ring: 160 60% 45%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 220 20% 6%;
+    --sidebar-foreground: 215 15% 55%;
+    --sidebar-primary: 160 60% 45%;
+    --sidebar-primary-foreground: 220 20% 7%;
+    --sidebar-accent: 220 16% 12%;
+    --sidebar-accent-foreground: 210 20% 88%;
+    --sidebar-border: 220 14% 12%;
+    --sidebar-ring: 160 60% 45%;
+
+    /* Custom semantic tokens */
+    --emotion-calm: 160 60% 45%;
+    --emotion-anxious: 0 72% 55%;
+    --emotion-excited: 45 90% 55%;
+    --emotion-sad: 220 70% 55%;
+
+    --glow-primary: 0 0% 100% / 0.03;
+    --card-gradient-from: 220 18% 11%;
+    --card-gradient-to: 220 18% 9%;
+
+    --chart-grid: 220 14% 16%;
+    --chart-line-hr: 160 60% 50%;
+    --chart-line-gsr: 270 60% 60%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+}
+
+@layer utilities {
+  .card-gradient {
+    background: linear-gradient(
+      135deg,
+      hsl(var(--card-gradient-from)),
+      hsl(var(--card-gradient-to))
+    );
+  }
+
+  .glow-border {
+    box-shadow: 0 0 0 1px hsl(var(--border)),
+                0 0 20px -5px hsl(var(--primary) / 0.15);
+  }
+
+  .text-emotion-calm { color: hsl(var(--emotion-calm)); }
+  .text-emotion-anxious { color: hsl(var(--emotion-anxious)); }
+  .text-emotion-excited { color: hsl(var(--emotion-excited)); }
+  .text-emotion-sad { color: hsl(var(--emotion-sad)); }
+
+  .bg-emotion-calm { background-color: hsl(var(--emotion-calm)); }
+  .bg-emotion-anxious { background-color: hsl(var(--emotion-anxious)); }
+  .bg-emotion-excited { background-color: hsl(var(--emotion-excited)); }
+  .bg-emotion-sad { background-color: hsl(var(--emotion-sad)); }
+
+  .sparkline-fade {
+    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  }
+}
